@@ -22,7 +22,7 @@ class ExchangeSynchronizer:
 
     async def start(self):
         self.running = True
-        logger.info("🛡️ [SYNC AGENT] Inicializado. Vigilancia estricta de Timeout/SL/TP/BE/Trailing activada.")
+        logger.info("🦸‍♂️ [SUPER SUPERVISOR] Inicializado. Vigilancia estricta de Timeout/SL/TP/BE/Trailing activada.")
         await self._patrol()
 
     async def _patrol(self):
@@ -61,13 +61,13 @@ class ExchangeSynchronizer:
                     # ─────────────────────────────────────────────────────
                     pos = await self.executor.verify_position_exists(symbol, trade["side"])
                     if not pos:
-                        logger.info(f"🛡️ [SYNC AGENT] La posición {symbol} ya NO existe en el Exchange. Limpiando...")
+                        logger.info(f"🦸‍♂️ [SUPER SUPERVISOR] La posición {symbol} ya NO existe en el Exchange. Limpiando...")
                         await self.engine._close_position_internal(symbol, "Cerrada por SL/TP en Exchange")
                         continue
                         
                     real_size = abs(float(pos.get("positionAmt", 0)))
                     if abs(real_size - trade["remaining_size"]) > (trade["position_size"] * 0.01):
-                        logger.warning(f"🛡️ [SYNC AGENT] Desfase volumen {symbol}. Memoria:{trade['remaining_size']:.4f} Bybit:{real_size:.4f}. Sincronizando...")
+                        logger.warning(f"🦸‍♂️ [SUPER SUPERVISOR] Desfase volumen {symbol}. Memoria:{trade['remaining_size']:.4f} Bybit:{real_size:.4f}. Sincronizando...")
                         trade["remaining_size"] = real_size
 
                     # ─────────────────────────────────────────────────────
@@ -89,13 +89,13 @@ class ExchangeSynchronizer:
                                     (side == "SHORT" and mark_price <= entry_price - be_threshold)
                                 )
                                 if be_triggered:
-                                    logger.info(f"🛡️ [GUARDIAN→BE] Condición Breakeven detectada para {symbol} @ {mark_price:.4f}. Activando...")
+                                    logger.info(f"🦸‍♂️ [SUPER SUPERVISOR→BE] Condición Breakeven detectada para {symbol} @ {mark_price:.4f}. Activando...")
                                     await self.engine._activate_profit_lock(symbol, trade)
                         except Exception as e:
-                            logger.error(f"[GUARDIAN BE CHECK] Error en {symbol}: {e}")
+                            logger.error(f"[SUPER SUPERVISOR BE CHECK] Error en {symbol}: {e}")
 
                     # ─────────────────────────────────────────────────────
-                    # CHECK 3: AUDITAR ÓRDENES ABIERTAS ESPECÍFICAS
+                    # CHECK 3: AUDITAR ÓRDENES ABIERTAS Y LIMPIAR DUPLICADOS
                     # ─────────────────────────────────────────────────────
                     open_orders = await self.client.get_open_orders(symbol)
                     
@@ -103,58 +103,92 @@ class ExchangeSynchronizer:
                     found_tp1 = False
                     found_tp2 = False
                     exchange_sl_price = 0.0
+                    
+                    # Contadores para duplicados
+                    sl_orders = []
+                    tp1_orders = []
+                    tp2_orders = []
 
                     if open_orders:
                         for order in open_orders:
                             oid = str(order.get("orderId", ""))
                             stop_px = float(order.get("stopPrice", order.get("triggerPrice", 0)))
+                            order_type = order.get("orderType", "")
                             
-                            if oid == trade.get("sl_order_id"):
-                                found_sl = True
-                                exchange_sl_price = stop_px
-                            elif oid == trade.get("tp1_order_id"):
-                                found_tp1 = True
-                            elif oid == trade.get("tp2_order_id"):
-                                found_tp2 = True
+                            if "STOP_MARKET" in order_type or "STOP" in order_type:
+                                sl_orders.append((oid, stop_px))
+                            elif "TAKE_PROFIT" in order_type:
+                                # Inferir si es TP1 o TP2 por cercanía al precio original
+                                if trade.get("tp1_price") and abs(stop_px - trade["tp1_price"]) < (trade["atr"] * 0.5):
+                                    tp1_orders.append((oid, stop_px))
+                                elif trade.get("tp2_price") and abs(stop_px - trade["tp2_price"]) < (trade["atr"] * 0.5):
+                                    tp2_orders.append((oid, stop_px))
+                                    
+                    # Limpiar Stop Loss Duplicados
+                    if len(sl_orders) > 1:
+                        logger.warning(f"🦸‍♂️ [SUPER SUPERVISOR] Detectados {len(sl_orders)} Stop Loss duplicados para {symbol}. Limpiando...")
+                        for oid, _ in sl_orders:
+                            await self.client.cancel_order(symbol, oid)
+                        sl_orders = [] # Forzar recreación
+                    elif len(sl_orders) == 1:
+                        found_sl = True
+                        trade["sl_order_id"] = sl_orders[0][0]
+                        exchange_sl_price = sl_orders[0][1]
+
+                    # Limpiar TP Duplicados
+                    if len(tp1_orders) > 1:
+                        logger.warning(f"🦸‍♂️ [SUPER SUPERVISOR] Detectados {len(tp1_orders)} TP1 duplicados para {symbol}. Limpiando...")
+                        for oid, _ in tp1_orders: await self.client.cancel_order(symbol, oid)
+                    elif len(tp1_orders) == 1:
+                        found_tp1 = True
+                        trade["tp1_order_id"] = tp1_orders[0][0]
+
+                    if len(tp2_orders) > 1:
+                        logger.warning(f"🦸‍♂️ [SUPER SUPERVISOR] Detectados {len(tp2_orders)} TP2 duplicados para {symbol}. Limpiando...")
+                        for oid, _ in tp2_orders: await self.client.cancel_order(symbol, oid)
+                    elif len(tp2_orders) == 1:
+                        found_tp2 = True
+                        trade["tp2_order_id"] = tp2_orders[0][0]
 
                     # ─────────────────────────────────────────────────────
                     # CHECK 4: VALIDAR Y FORZAR STOP LOSS
                     # ─────────────────────────────────────────────────────
                     if not found_sl:
-                        logger.error(f"⚠️ [SYNC AGENT] ALERTA: {symbol} NO tiene Stop Loss en Bybit! Recreando @ {trade['sl_price']:.4f}...")
+                        logger.error(f"⚠️ [SUPER SUPERVISOR] ALERTA: {symbol} ({trade.get('strategy', 'Unknown')}) NO tiene Stop Loss en Bybit! Recreando @ {trade['sl_price']:.4f}...")
                         new_sl = await self.executor.update_sl(
                             symbol, trade["side"], old_sl_id="", new_sl_price=trade["sl_price"], remaining_size=trade["remaining_size"]
                         )
                         if new_sl:
                             trade["sl_order_id"] = new_sl
-                            logger.info(f"✅ [SYNC AGENT] SL Restaurado exitosamente para {symbol}.")
+                            logger.info(f"✅ [SUPER SUPERVISOR] SL Restaurado exitosamente para {symbol}.")
                     else:
                         # Chequeo de Ghost SL (desfase por red)
                         if abs(exchange_sl_price - trade["sl_price"]) > (trade["atr"] * 0.05):
-                            logger.warning(f"👻 [SYNC AGENT] Ghost SL en {symbol}. Bybit:{exchange_sl_price:.4f} Memoria:{trade['sl_price']:.4f}. Corrigiendo...")
+                            logger.warning(f"👻 [SUPER SUPERVISOR] Ghost SL en {symbol}. Bybit:{exchange_sl_price:.4f} Memoria:{trade['sl_price']:.4f}. Corrigiendo...")
                             new_sl = await self.executor.update_sl(
                                 symbol, trade["side"], old_sl_id=trade["sl_order_id"], new_sl_price=trade["sl_price"], remaining_size=trade["remaining_size"]
                             )
                             if new_sl:
                                 trade["sl_order_id"] = new_sl
-                                logger.info(f"🛡️ [SYNC AGENT] SL Sincronizado correctamente para {symbol}.")
+                                logger.info(f"🦸‍♂️ [SUPER SUPERVISOR] SL Sincronizado correctamente para {symbol}.")
 
                     # ─────────────────────────────────────────────────────
-                    # CHECK 5: VALIDAR TAKE PROFITS HUÉRFANOS
+                    # CHECK 5: VALIDAR TAKE PROFITS HUÉRFANOS (Solo Estrategia 1)
                     # ─────────────────────────────────────────────────────
-                    if not found_tp1 and not trade.get("tp1_hit"):
-                        logger.error(f"⚠️ [SYNC AGENT] ALERTA: TP1 de {symbol} desaparecido. Recreando...")
-                        tp1_qty = trade["position_size"] * 0.3
-                        new_tp1 = await self.executor.place_single_tp(symbol, trade["side"], trade["tp1_price"], tp1_qty)
-                        if new_tp1:
-                            trade["tp1_order_id"] = new_tp1
-                            
-                    if not found_tp2 and not trade.get("tp2_hit"):
-                        logger.error(f"⚠️ [SYNC AGENT] ALERTA: TP2 de {symbol} desaparecido. Recreando...")
-                        tp2_qty = trade["position_size"] * 0.3
-                        new_tp2 = await self.executor.place_single_tp(symbol, trade["side"], trade["tp2_price"], tp2_qty)
-                        if new_tp2:
-                            trade["tp2_order_id"] = new_tp2
+                    if trade.get("tp1_price") is not None:
+                        if not found_tp1 and not trade.get("tp1_hit"):
+                            logger.error(f"⚠️ [SUPER SUPERVISOR] ALERTA: TP1 de {symbol} desaparecido. Recreando...")
+                            tp1_qty = trade["position_size"] * 0.3
+                            new_tp1 = await self.executor.place_single_tp(symbol, trade["side"], trade["tp1_price"], tp1_qty)
+                            if new_tp1:
+                                trade["tp1_order_id"] = new_tp1
+                                
+                        if not found_tp2 and not trade.get("tp2_hit"):
+                            logger.error(f"⚠️ [SUPER SUPERVISOR] ALERTA: TP2 de {symbol} desaparecido. Recreando...")
+                            tp2_qty = trade["position_size"] * 0.3
+                            new_tp2 = await self.executor.place_single_tp(symbol, trade["side"], trade["tp2_price"], tp2_qty)
+                            if new_tp2:
+                                trade["tp2_order_id"] = new_tp2
 
                     # ─────────────────────────────────────────────────────
                     # LOG DE ESTADO DE FASE EN CADA CICLO
@@ -164,20 +198,23 @@ class ExchangeSynchronizer:
                     elif trade.get("tp2_hit"):              phase = "TP2 ✅ → Activando Trailing"
                     elif trade.get("profit_lock_active"):   phase = "🛡️ BREAKEVEN ACTIVO"
                     elif trade.get("tp1_hit"):              phase = "TP1 ✅ → Buscando TP2"
-                    logger.info(f"🛡️ [GUARDIAN] {symbol} {trade['side']} | {phase} | SL:{trade['sl_price']:.4f} | TP1:{trade['tp1_price']:.4f} | TP2:{trade['tp2_price']:.4f}")
+                    
+                    t1 = f"{trade['tp1_price']:.4f}" if trade.get('tp1_price') else "OFF"
+                    t2 = f"{trade['tp2_price']:.4f}" if trade.get('tp2_price') else "OFF"
+                    logger.info(f"🦸‍♂️ [SUPER SUPERVISOR] {symbol} {trade['side']} ({trade.get('strategy', 'Unknown')}) | {phase} | SL:{trade['sl_price']:.4f} | TP1:{t1} | TP2:{t2}")
 
             except Exception as e:
                 error_msg = str(e)
                 if "429" in error_msg or "Too Many Requests" in error_msg or "timeout" in error_msg.lower():
                     backoff_time = min(backoff_time * 2, max_backoff)
-                    logger.error(f"🛡️ [SYNC AGENT] Rate Limit. Durmiendo {backoff_time}s.")
+                    logger.error(f"🦸‍♂️ [SUPER SUPERVISOR] Rate Limit. Durmiendo {backoff_time}s.")
                     await asyncio.sleep(backoff_time)
                 else:
-                    logger.error(f"🛡️ [SYNC AGENT] Error durante patrullaje: {e}")
+                    logger.error(f"🦸‍♂️ [SUPER SUPERVISOR] Error durante patrullaje: {e}")
             else:
                 backoff_time = 2
 
     async def stop(self):
         self.running = False
-        logger.info("🛡️ [SYNC AGENT] Apagando...")
+        logger.info("🦸‍♂️ [SUPER SUPERVISOR] Apagando...")
 

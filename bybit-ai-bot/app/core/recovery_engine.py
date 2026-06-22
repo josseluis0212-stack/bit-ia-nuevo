@@ -148,13 +148,14 @@ class RecoveryEngine:
             trade_mem = {
                 "trade_id":          trade_db.trade_id,
                 "side":              side,
+                "strategy":          trade_db.strategy,
                 "entry_price":       entry,
                 "position_size":     trade_db.position_size,
                 "remaining_size":    real_size,
                 "atr":               atr,
                 "sl_price":          sl_reconstructed,
-                "tp1_price":         tp1,
-                "tp2_price":         tp2,
+                "tp1_price":         tp1 if tp1 > 0 else None,
+                "tp2_price":         tp2 if tp2 > 0 else None,
                 "profit_lock_price": pl_lock,
                 "highest_price":     current_price if side == "LONG" else entry,
                 "filled":            True,   # Ya está llena, estamos recuperando
