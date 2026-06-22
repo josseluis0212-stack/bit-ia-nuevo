@@ -1,0 +1,566 @@
+
+2026-06-13 08:41:05,580 [ERROR] QUANTUM BINGX - Bybit API Request Exception (Attempt 1/3): 'NoneType' object has no attribute 'get'
+2026-06-13 08:41:07,447 [ERROR] QUANTUM BINGX - Bybit API Request Exception (Attempt 2/3): 'NoneType' object has no attribute 'get'
+2026-06-13 08:41:09,744 [ERROR] QUANTUM BINGX - Bybit API Request Exception (Attempt 3/3): 'NoneType' object has no attribute 'get'
+2026-06-13 08:42:11,047 [ERROR] QUANTUM BINGX - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit
+2026-06-13 08:42:12,348 [ERROR] QUANTUM BINGX - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit
+2026-06-13 08:42:14,642 [ERROR] QUANTUM BINGX - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit
+2026-06-13 08:42:49,662 [ERROR] QUANTUM BINGX - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-13 08:42:51,540 [ERROR] QUANTUM BINGX - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-13 08:42:53,848 [ERROR] QUANTUM BINGX - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-13 08:44:42,825 [ERROR] QUANTUM BINGX - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-13 08:44:44,133 [ERROR] QUANTUM BINGX - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-13 08:44:46,438 [ERROR] QUANTUM BINGX - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-13 08:45:58,057 [ERROR] QUANTUM BINGX - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-13 08:45:59,940 [ERROR] QUANTUM BINGX - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-13 08:46:02,241 [ERROR] QUANTUM BINGX - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-14 01:46:12,250 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-14 01:46:13,549 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-14 01:46:15,860 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-14 02:16:38,255 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-14 02:16:38,860 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-14 02:16:39,555 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-14 02:16:40,179 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-14 02:16:41,859 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-14 02:16:42,469 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:08:36,745 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:08:38,062 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:08:40,932 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:08:40,932 [ERROR] QUANTUM BYBIT - Failed to get positions: {'success': False, 'data': None, 'msg': 'Max retries exceeded'}
+2026-06-16 10:09:22,323 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-mode: API key is invalid. | Code: 10003
+2026-06-16 10:09:23,224 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:09:24,540 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:09:26,867 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:09:26,869 [ERROR] QUANTUM BYBIT - Failed to get positions: {'success': False, 'data': None, 'msg': 'Max retries exceeded'}
+2026-06-16 10:09:35,945 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:09:37,255 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:09:39,565 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:09:41,403 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:09:43,310 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:09:46,207 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:09:48,689 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:09:49,992 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:09:52,867 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:09:54,468 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando BEATUSDT: could not convert string to float: ''
+2026-06-16 10:09:57,521 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:09:58,853 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:01,160 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:03,584 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:05,454 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:07,780 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:07,780 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando DOGEUSDT: float division by zero
+2026-06-16 10:10:09,373 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ARCUSDT: could not convert string to float: ''
+2026-06-16 10:10:11,838 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:13,147 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:15,462 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:15,462 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000PEPEUSDT: float division by zero
+2026-06-16 10:10:17,907 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:19,365 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:21,654 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:21,655 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SUIUSDT: float division by zero
+2026-06-16 10:10:24,655 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:25,987 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:29,014 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:32,102 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:33,413 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:35,723 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:35,723 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ADAUSDT: float division by zero
+2026-06-16 10:10:37,768 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:39,682 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:42,010 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:42,011 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando AAVEUSDT: float division by zero
+2026-06-16 10:10:43,581 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ALLOUSDT: could not convert string to float: ''
+2026-06-16 10:10:45,081 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando DOTUSDT: could not convert string to float: ''
+2026-06-16 10:10:46,703 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando TAOUSDT: could not convert string to float: ''
+2026-06-16 10:10:47,423 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando XPLUSDT: could not convert string to float: ''
+2026-06-16 10:10:49,925 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:50,648 [ERROR] QUANTUM BYBIT - Private WS Error: no close frame received or sent
+2026-06-16 10:10:51,872 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:54,790 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:54,790 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando VIRTUALUSDT: float division by zero
+2026-06-16 10:10:56,111 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SQDUSDT: could not convert string to float: ''
+2026-06-16 10:10:57,754 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:10:59,090 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:01,398 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:01,398 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SOLUSDT: float division by zero
+2026-06-16 10:11:03,007 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:04,896 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:07,810 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:09,355 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando AAOIUSDT: could not convert string to float: ''
+2026-06-16 10:11:11,862 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:13,169 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:15,484 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:15,484 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando TRUTHUSDT: float division by zero
+2026-06-16 10:11:16,529 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando BSBUSDT: could not convert string to float: ''
+2026-06-16 10:11:18,105 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:19,411 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:22,279 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:24,734 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:26,053 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:28,368 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:28,368 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando IRENUSDT: float division by zero
+2026-06-16 10:11:30,918 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:32,797 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:35,706 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:35,706 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando QNTXUSDT: float division by zero
+2026-06-16 10:11:37,895 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando XAUUSDT: could not convert string to float: ''
+2026-06-16 10:11:38,919 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ORCLUSDT: could not convert string to float: ''
+2026-06-16 10:11:40,768 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:42,083 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:44,938 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:44,938 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando TSLAUSDT: float division by zero
+2026-06-16 10:11:46,792 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:48,687 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:51,011 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:51,011 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando CTRUSDT: float division by zero
+2026-06-16 10:11:53,479 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:54,781 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:57,108 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:11:57,109 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SPCXUSDT: float division by zero
+2026-06-16 10:11:59,026 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:12:00,933 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:12:03,237 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:12:03,237 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando CLUSDT: float division by zero
+2026-06-16 10:12:05,145 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:12:06,479 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:12:08,772 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:12:08,772 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando GIGGLEUSDT: float division by zero
+2026-06-16 10:12:10,654 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:12:11,961 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:12:14,836 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:12:14,837 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 0GUSDT: float division by zero
+2026-06-16 10:12:17,000 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000000BABYDOGEUSDT: could not convert string to float: ''
+2026-06-16 10:12:19,119 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000000MOGUSDT: could not convert string to float: ''
+2026-06-16 10:12:20,519 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 10000NEXUSDT: could not convert string to float: ''
+2026-06-16 10:12:22,104 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 10000SATSUSDT: could not convert string to float: ''
+2026-06-16 10:12:23,372 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000BONKUSDT: could not convert string to float: ''
+2026-06-16 10:13:28,818 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:13:30,691 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:13:32,998 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:13:34,316 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:13:35,631 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:13:37,941 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:13:40,400 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:13:42,276 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:13:45,176 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:13:47,343 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando BEATUSDT: could not convert string to float: ''
+2026-06-16 10:13:49,255 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:13:51,127 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:13:53,982 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:13:56,467 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:13:57,785 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:00,649 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:00,649 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando DOGEUSDT: float division by zero
+2026-06-16 10:14:02,205 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ARCUSDT: could not convert string to float: ''
+2026-06-16 10:14:04,724 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:06,591 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:09,483 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:09,483 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000PEPEUSDT: float division by zero
+2026-06-16 10:14:11,968 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:13,863 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:16,180 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:16,180 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SUIUSDT: float division by zero
+2026-06-16 10:14:18,084 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:19,966 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:22,275 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:23,592 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:24,885 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:27,741 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:27,742 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ADAUSDT: float division by zero
+2026-06-16 10:14:28,967 [ERROR] QUANTUM BYBIT - Private WS Error: no close frame received or sent
+2026-06-16 10:14:29,345 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:30,665 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:32,982 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:32,982 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando AAVEUSDT: float division by zero
+2026-06-16 10:14:34,275 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ALLOUSDT: could not convert string to float: ''
+2026-06-16 10:14:35,603 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando DOTUSDT: could not convert string to float: ''
+2026-06-16 10:14:36,648 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando TAOUSDT: could not convert string to float: ''
+2026-06-16 10:14:38,277 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando XPLUSDT: could not convert string to float: ''
+2026-06-16 10:14:40,781 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:42,106 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:44,402 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:44,402 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando VIRTUALUSDT: float division by zero
+2026-06-16 10:14:45,951 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SQDUSDT: could not convert string to float: ''
+2026-06-16 10:14:47,532 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:48,823 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:51,133 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:51,134 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SOLUSDT: float division by zero
+2026-06-16 10:14:53,533 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:55,416 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:58,315 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:14:59,914 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando AAOIUSDT: could not convert string to float: ''
+2026-06-16 10:15:01,568 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:03,431 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:06,309 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:06,309 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando TRUTHUSDT: float division by zero
+2026-06-16 10:15:07,893 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando BSBUSDT: could not convert string to float: ''
+2026-06-16 10:15:09,202 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:10,509 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:13,349 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:16,348 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:18,192 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:20,504 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:20,505 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando IRENUSDT: float division by zero
+2026-06-16 10:15:22,933 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:24,232 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:27,222 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:27,222 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando QNTXUSDT: float division by zero
+2026-06-16 10:15:28,506 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando XAUUSDT: could not convert string to float: ''
+2026-06-16 10:15:30,091 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ORCLUSDT: could not convert string to float: ''
+2026-06-16 10:15:31,732 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:33,613 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:36,483 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:36,484 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando TSLAUSDT: float division by zero
+2026-06-16 10:15:38,897 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:40,200 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:42,486 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:42,486 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando CTRUSDT: float division by zero
+2026-06-16 10:15:44,148 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:45,459 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:47,765 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:47,766 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SPCXUSDT: float division by zero
+2026-06-16 10:15:50,209 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:52,034 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:54,309 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:54,310 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando CLUSDT: float division by zero
+2026-06-16 10:15:56,160 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:57,463 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:59,758 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:15:59,759 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando GIGGLEUSDT: float division by zero
+2026-06-16 10:16:02,223 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:16:04,072 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:16:06,944 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:16:06,944 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 0GUSDT: float division by zero
+2026-06-16 10:16:09,050 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000000BABYDOGEUSDT: could not convert string to float: ''
+2026-06-16 10:16:10,639 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000000MOGUSDT: could not convert string to float: ''
+2026-06-16 10:16:12,083 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 10000NEXUSDT: could not convert string to float: ''
+2026-06-16 10:16:13,648 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 10000SATSUSDT: could not convert string to float: ''
+2026-06-16 10:16:14,357 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000BONKUSDT: could not convert string to float: ''
+2026-06-16 10:16:50,651 [ERROR] QUANTUM BYBIT - Private WS Error: no close frame received or sent
+2026-06-16 10:17:18,188 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:20,094 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:22,986 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:24,890 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:26,226 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:28,530 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:30,429 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:32,314 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:34,620 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:36,214 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando BEATUSDT: could not convert string to float: ''
+2026-06-16 10:17:38,623 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:40,443 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:43,306 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:45,189 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:46,510 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:49,365 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:49,366 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando DOGEUSDT: float division by zero
+2026-06-16 10:17:51,907 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:53,214 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:56,091 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:56,092 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ARCUSDT: float division by zero
+2026-06-16 10:17:57,947 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:17:59,846 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:02,715 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:05,715 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:07,008 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:09,896 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:09,897 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SUIUSDT: float division by zero
+2026-06-16 10:18:11,801 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:13,125 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:16,030 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:18,503 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:20,392 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:22,709 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:22,709 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ADAUSDT: float division by zero
+2026-06-16 10:18:25,134 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:26,436 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:29,326 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:29,327 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando AAVEUSDT: float division by zero
+2026-06-16 10:18:31,472 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ALLOUSDT: could not convert string to float: ''
+2026-06-16 10:18:33,624 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando DOTUSDT: could not convert string to float: ''
+2026-06-16 10:18:35,776 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando TAOUSDT: could not convert string to float: ''
+2026-06-16 10:18:37,336 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando XPLUSDT: could not convert string to float: ''
+2026-06-16 10:18:39,821 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:41,698 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:44,569 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:44,569 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando VIRTUALUSDT: float division by zero
+2026-06-16 10:18:46,113 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SQDUSDT: could not convert string to float: ''
+2026-06-16 10:18:47,405 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:48,707 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:50,988 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:50,988 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SOLUSDT: float division by zero
+2026-06-16 10:18:53,446 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:54,753 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:57,605 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:18:58,319 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando AAOIUSDT: could not convert string to float: ''
+2026-06-16 10:19:00,762 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:02,055 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:04,939 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:04,941 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando TRUTHUSDT: float division by zero
+2026-06-16 10:19:05,976 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando BSBUSDT: could not convert string to float: ''
+2026-06-16 10:19:07,858 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:09,163 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:11,457 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:14,530 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:15,857 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:18,181 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:18,181 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando IRENUSDT: float division by zero
+2026-06-16 10:19:21,223 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:22,538 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:24,860 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:24,860 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando QNTXUSDT: float division by zero
+2026-06-16 10:19:26,461 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando XAUUSDT: could not convert string to float: ''
+2026-06-16 10:19:28,581 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ORCLUSDT: could not convert string to float: ''
+2026-06-16 10:19:30,184 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:31,483 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:33,770 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:33,770 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando TSLAUSDT: float division by zero
+2026-06-16 10:19:35,421 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:37,307 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:39,627 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:39,627 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SPCXUSDT: float division by zero
+2026-06-16 10:19:42,029 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:43,338 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:45,652 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:45,652 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando CLUSDT: float division by zero
+2026-06-16 10:19:47,504 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:49,370 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:52,246 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:52,247 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando GIGGLEUSDT: float division by zero
+2026-06-16 10:19:54,689 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:56,605 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:59,476 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:19:59,476 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 0GUSDT: float division by zero
+2026-06-16 10:20:01,063 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000000BABYDOGEUSDT: could not convert string to float: ''
+2026-06-16 10:20:02,651 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000000MOGUSDT: could not convert string to float: ''
+2026-06-16 10:20:04,357 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 10000NEXUSDT: could not convert string to float: ''
+2026-06-16 10:20:05,935 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 10000SATSUSDT: could not convert string to float: ''
+2026-06-16 10:20:08,070 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000BONKUSDT: could not convert string to float: ''
+2026-06-16 10:20:09,406 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000BTTUSDT: could not convert string to float: ''
+2026-06-16 10:20:28,965 [ERROR] QUANTUM BYBIT - Private WS Error: no close frame received or sent
+2026-06-16 10:21:12,864 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:14,736 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:17,044 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:19,474 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:20,779 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:23,667 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:26,158 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:27,467 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:30,366 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:31,911 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando BEATUSDT: could not convert string to float: ''
+2026-06-16 10:21:32,927 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:34,816 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:37,135 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:39,586 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:41,503 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:44,400 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:44,400 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando DOGEUSDT: float division by zero
+2026-06-16 10:21:46,587 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ARCUSDT: could not convert string to float: ''
+2026-06-16 10:21:48,748 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:50,655 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:52,975 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:56,052 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:21:57,922 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:00,230 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:00,231 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SUIUSDT: float division by zero
+2026-06-16 10:22:02,637 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:03,951 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:06,287 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:08,770 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:10,665 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:13,536 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:13,536 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ADAUSDT: float division by zero
+2026-06-16 10:22:14,870 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:16,712 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:19,603 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:19,604 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando AAVEUSDT: float division by zero
+2026-06-16 10:22:20,334 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ALLOUSDT: could not convert string to float: ''
+2026-06-16 10:22:21,931 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando DOTUSDT: could not convert string to float: ''
+2026-06-16 10:22:22,917 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando TAOUSDT: could not convert string to float: ''
+2026-06-16 10:22:24,506 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando XPLUSDT: could not convert string to float: ''
+2026-06-16 10:22:26,679 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:28,005 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:30,331 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:30,331 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando VIRTUALUSDT: float division by zero
+2026-06-16 10:22:31,942 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SQDUSDT: could not convert string to float: ''
+2026-06-16 10:22:33,845 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:35,757 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:38,086 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:38,087 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SOLUSDT: float division by zero
+2026-06-16 10:22:40,630 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:42,545 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:44,876 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:46,494 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando AAOIUSDT: could not convert string to float: ''
+2026-06-16 10:22:47,824 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:49,138 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:51,438 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:51,439 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando TRUTHUSDT: float division by zero
+2026-06-16 10:22:53,565 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando BSBUSDT: could not convert string to float: ''
+2026-06-16 10:22:55,733 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:57,009 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:22:59,883 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:23:02,400 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:23:04,302 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:23:06,631 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:23:06,632 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando IRENUSDT: float division by zero
+2026-06-16 10:23:09,133 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:23:10,454 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:23:13,370 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:23:13,371 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando QNTXUSDT: float division by zero
+2026-06-16 10:23:18,083 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-mode: API key is invalid. | Code: 10003
+2026-06-16 10:23:18,426 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-16 10:23:19,746 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-16 10:23:22,635 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-16 10:23:22,636 [ERROR] QUANTUM BYBIT - Failed to get positions: {'success': False, 'data': None, 'msg': 'Max retries exceeded'}
+2026-06-16 10:23:30,909 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:23:31,215 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:23:32,091 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:23:32,957 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:23:35,520 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/order/create: API key is invalid. | Code: 10003
+2026-06-16 10:23:35,520 [ERROR] QUANTUM BYBIT - [ENTRY] Failed to place order: API key is invalid. (Code: 10003)
+2026-06-16 10:23:37,930 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:23:38,225 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:23:38,524 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:23:38,830 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:23:39,693 [ERROR] QUANTUM BYBIT - [ENTRY] Failed to place order: Formatted quantity is 0. (Code: 109400)
+2026-06-16 10:23:40,700 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:23:41,585 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:23:41,884 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:23:42,755 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:23:43,055 [ERROR] QUANTUM BYBIT - [ENTRY] Failed to place order: Formatted quantity is 0. (Code: 109400)
+2026-06-16 10:23:44,079 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando BEATUSDT: could not convert string to float: ''
+2026-06-16 10:23:45,956 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:23:46,260 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:23:47,147 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:23:48,007 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:23:49,175 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/order/create: API key is invalid. | Code: 10003
+2026-06-16 10:23:49,178 [ERROR] QUANTUM BYBIT - [ENTRY] Failed to place order: API key is invalid. (Code: 10003)
+2026-06-16 10:23:50,191 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando DOGEUSDT: float division by zero
+2026-06-16 10:23:50,913 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ARCUSDT: could not convert string to float: ''
+2026-06-16 10:23:52,791 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:23:53,089 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:23:53,385 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:23:53,685 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:23:54,279 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/order/create: API key is invalid. | Code: 10003
+2026-06-16 10:23:54,286 [ERROR] QUANTUM BYBIT - [ENTRY] Failed to place order: API key is invalid. (Code: 10003)
+2026-06-16 10:23:55,299 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SUIUSDT: float division by zero
+2026-06-16 10:23:58,464 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:23:58,765 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:23:59,061 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:23:59,366 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:24:00,535 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/order/create: API key is invalid. | Code: 10003
+2026-06-16 10:24:00,536 [ERROR] QUANTUM BYBIT - [ENTRY] Failed to place order: API key is invalid. (Code: 10003)
+2026-06-16 10:24:01,545 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ADAUSDT: float division by zero
+2026-06-16 10:24:02,538 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando AAVEUSDT: float division by zero
+2026-06-16 10:24:03,576 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ALLOUSDT: could not convert string to float: ''
+2026-06-16 10:24:04,262 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando DOTUSDT: could not convert string to float: ''
+2026-06-16 10:24:05,849 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando TAOUSDT: could not convert string to float: ''
+2026-06-16 10:24:08,006 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando XPLUSDT: could not convert string to float: ''
+2026-06-16 10:24:08,783 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando VIRTUALUSDT: float division by zero
+2026-06-16 10:24:10,945 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SQDUSDT: could not convert string to float: ''
+2026-06-16 10:24:13,106 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SOLUSDT: float division by zero
+2026-06-16 10:24:14,455 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:24:15,338 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:24:15,639 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:24:16,518 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:24:17,699 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/order/create: API key is invalid. | Code: 10003
+2026-06-16 10:24:17,699 [ERROR] QUANTUM BYBIT - [ENTRY] Failed to place order: API key is invalid. (Code: 10003)
+2026-06-16 10:24:19,005 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando AAOIUSDT: could not convert string to float: ''
+2026-06-16 10:24:20,576 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando TRUTHUSDT: float division by zero
+2026-06-16 10:24:21,577 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando BSBUSDT: could not convert string to float: ''
+2026-06-16 10:24:23,512 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:24:24,404 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:24:25,292 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:24:25,598 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:24:27,335 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/order/create: API key is invalid. | Code: 10003
+2026-06-16 10:24:27,335 [ERROR] QUANTUM BYBIT - [ENTRY] Failed to place order: API key is invalid. (Code: 10003)
+2026-06-16 10:24:28,370 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando IRENUSDT: float division by zero
+2026-06-16 10:24:29,984 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando QNTXUSDT: float division by zero
+2026-06-16 10:24:31,006 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando XAUUSDT: could not convert string to float: ''
+2026-06-16 10:24:32,311 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ORCLUSDT: could not convert string to float: ''
+2026-06-16 10:24:33,322 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando TSLAUSDT: float division by zero
+2026-06-16 10:24:34,670 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SPCXUSDT: float division by zero
+2026-06-16 10:24:35,967 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando CLUSDT: float division by zero
+2026-06-16 10:24:37,516 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando GIGGLEUSDT: float division by zero
+2026-06-16 10:24:39,161 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 0GUSDT: float division by zero
+2026-06-16 10:24:40,791 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000000BABYDOGEUSDT: could not convert string to float: ''
+2026-06-16 10:24:42,078 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000000MOGUSDT: could not convert string to float: ''
+2026-06-16 10:24:44,628 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 10000NEXUSDT: could not convert string to float: ''
+2026-06-16 10:24:46,780 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 10000SATSUSDT: could not convert string to float: ''
+2026-06-16 10:24:48,108 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000BONKUSDT: could not convert string to float: ''
+2026-06-16 10:24:50,249 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando 1000BTTUSDT: could not convert string to float: ''
+2026-06-16 10:25:50,629 [ERROR] QUANTUM BYBIT - Private WS Error: no close frame received or sent
+2026-06-16 10:25:53,775 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:25:54,645 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:25:54,942 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:25:55,828 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:25:56,980 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/order/create: API key is invalid. | Code: 10003
+2026-06-16 10:25:56,980 [ERROR] QUANTUM BYBIT - [ENTRY] Failed to place order: API key is invalid. (Code: 10003)
+2026-06-16 10:25:58,890 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:25:59,750 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:26:00,044 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:26:00,913 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:26:01,210 [ERROR] QUANTUM BYBIT - [ENTRY] Failed to place order: Formatted quantity is 0. (Code: 109400)
+2026-06-16 10:26:02,517 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:26:02,825 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:26:03,692 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:26:03,993 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:26:04,288 [ERROR] QUANTUM BYBIT - [ENTRY] Failed to place order: Formatted quantity is 0. (Code: 109400)
+2026-06-16 10:26:05,316 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando BEATUSDT: could not convert string to float: ''
+2026-06-16 10:26:06,639 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:26:06,942 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:26:07,807 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:26:08,116 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:26:08,719 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/order/create: API key is invalid. | Code: 10003
+2026-06-16 10:26:08,719 [ERROR] QUANTUM BYBIT - [ENTRY] Failed to place order: API key is invalid. (Code: 10003)
+2026-06-16 10:26:09,756 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando DOGEUSDT: float division by zero
+2026-06-16 10:26:11,336 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ARCUSDT: could not convert string to float: ''
+2026-06-16 10:26:12,945 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:26:13,249 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:26:13,546 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:26:13,851 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:26:15,014 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/order/create: API key is invalid. | Code: 10003
+2026-06-16 10:26:15,014 [ERROR] QUANTUM BYBIT - [ENTRY] Failed to place order: API key is invalid. (Code: 10003)
+2026-06-16 10:26:16,018 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando SUIUSDT: float division by zero
+2026-06-16 10:26:17,964 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:26:18,269 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:26:19,116 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/switch-isolated: API key is invalid. | Code: 10003
+2026-06-16 10:26:19,412 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/position/set-leverage: API key is invalid. | Code: 10003
+2026-06-16 10:26:20,014 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-testnet.bybit.com/v5/order/create: API key is invalid. | Code: 10003
+2026-06-16 10:26:20,015 [ERROR] QUANTUM BYBIT - [ENTRY] Failed to place order: API key is invalid. (Code: 10003)
+2026-06-16 10:26:21,597 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ADAUSDT: float division by zero
+2026-06-16 10:26:22,334 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando AAVEUSDT: float division by zero
+2026-06-16 10:26:23,933 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando ALLOUSDT: could not convert string to float: ''
+2026-06-16 10:26:24,674 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando DOTUSDT: could not convert string to float: ''
+2026-06-16 10:26:26,259 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando TAOUSDT: could not convert string to float: ''
+2026-06-16 10:26:28,432 [ERROR] QUANTUM BYBIT - [POLL] Error evaluando XPLUSDT: could not convert string to float: ''
+2026-06-17 01:16:19,881 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-17 01:16:21,215 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-17 01:16:24,146 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-17 01:16:24,146 [ERROR] QUANTUM BYBIT - Failed to get positions: {'success': False, 'data': None, 'msg': 'Max retries exceeded'}
+2026-06-17 02:01:49,732 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-17 02:01:51,033 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-17 02:01:53,350 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-17 02:01:53,351 [ERROR] QUANTUM BYBIT - Failed to get positions: {'success': False, 'data': None, 'msg': 'Max retries exceeded'}
+2026-06-19 07:01:02,038 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-19 07:01:02,048 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-19 07:01:03,345 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-19 07:01:03,349 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-19 07:01:05,655 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-19 07:01:05,667 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-19 07:01:22,951 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-19 07:01:22,952 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-19 07:01:24,269 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-19 07:01:24,269 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-19 07:01:26,561 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-19 07:01:26,575 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-19 07:24:21,437 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-19 07:24:22,740 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-19 07:24:25,044 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-19 07:24:25,045 [ERROR] QUANTUM BYBIT - Failed to get positions: {'success': False, 'data': None, 'msg': 'Max retries exceeded'}
+2026-06-19 08:03:18,979 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-demo.bybit.com/v5/order/cancel-all: API key is invalid. | Code: 10003
+2026-06-19 08:03:19,281 [ERROR] QUANTUM BYBIT - Bybit API Error on https://api-demo.bybit.com/v5/order/cancel-all: API key is invalid. | Code: 10003
+2026-06-20 19:15:47,973 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 1/3): Empty response from Bybit. Status: 401
+2026-06-20 19:15:49,288 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 2/3): Empty response from Bybit. Status: 401
+2026-06-20 19:15:51,595 [ERROR] QUANTUM BYBIT - Bybit API Request Exception (Attempt 3/3): Empty response from Bybit. Status: 401
+2026-06-20 19:15:51,600 [ERROR] QUANTUM BYBIT - Failed to get positions: {'success': False, 'data': None, 'msg': 'Max retries exceeded'}

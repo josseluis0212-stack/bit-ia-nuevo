@@ -1,0 +1,413 @@
+import asyncio
+import uvicorn
+import os
+import json
+import time
+from datetime import datetime, timedelta
+from contextlib import asynccontextmanager
+from fastapi import FastAPI
+from fastapi.responses import JSONResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
+from app.core.engine import Engine
+from app.core.watchdog import Watchdog
+from app.core.position_manager import RetroactivePositionManager
+
+from app.logger import logger
+from app.exchange.bybit_client import AsyncBybitClient
+from app.config import Config
+from app.constants import BOT_LOG_FILE, TRADES_FILE
+
+engine = Engine()
+watchdog = Watchdog(engine)
+retro_pm = RetroactivePositionManager(engine)
+
+bybit_client = AsyncBybitClient()
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Startup and shutdown lifecycle manager."""
+    logger.warning("=====================================================================")
+    logger.warning("🚨 [SYSTEM ALERT] BOT RESTARTED / RECOVERED FROM RENDER SHUTDOWN")
+    logger.warning("Si no fuiste tú quien reinició el bot, el servidor en la nube (Render)")
+    logger.warning("mató el proceso y el bot acaba de revivir automáticamente.")
+    logger.warning("=====================================================================")
+    
+    logger.info("Checking Hedge Mode...")
+    await bybit_client.ensure_hedge_mode()
+
+    logger.info("Starting QUANTUM BYBIT Bot...")
+    engine_task    = asyncio.create_task(engine.start())
+    watchdog_task  = asyncio.create_task(watchdog.start())
+    retro_pm_task  = asyncio.create_task(retro_pm.start())
+    logger.info("🔭 [RETRO-PM] Inteligencia Retroactiva por K-lines activada.")
+
+    # Lanzar el proceso supertrend independiente
+    try:
+        import subprocess
+        import sys
+        import os
+        logger.info("🚀 Launching SuperTrend Bot process from Uvicorn...")
+        os.makedirs("storage", exist_ok=True)
+        supertrend_log = open("storage/supertrend_raw.log", "a")
+        
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        supertrend_path = os.path.join(base_dir, "supertrend_ema_bot", "main.py")
+        
+        subprocess.Popen(
+            [sys.executable, "-u", supertrend_path],
+            stdout=supertrend_log,
+            stderr=subprocess.STDOUT
+        )
+        logger.info("✅ SuperTrend Bot process launched.")
+    except Exception as e:
+        logger.error(f"❌ Failed to launch SuperTrend process: {e}")
+
+    yield
+
+    logger.info("Shutting down...")
+    await engine.stop()
+    await watchdog.stop()
+    await retro_pm.stop()
+
+    engine_task.cancel()
+    watchdog_task.cancel()
+    retro_pm_task.cancel()
+
+
+app = FastAPI(
+    title="QUANTUM BYBIT Bot",
+    description="SMC Strategy on Bybit Demo",
+    version="10.0.0",
+    lifespan=lifespan
+)
+
+# Mount static files for Elite Terminal Dashboard
+static_dir = os.path.join(os.path.dirname(__file__), "static")
+if os.path.exists(static_dir):
+    app.mount("/static", StaticFiles(directory=static_dir), name="static")
+
+@app.get("/")
+async def root():
+    """Serve the Elite Terminal Dashboard."""
+    index_path = os.path.join(static_dir, "index.html")
+    if os.path.exists(index_path):
+        return FileResponse(index_path)
+    return JSONResponse({"error": "Dashboard UI not found. Did you create app/static/index.html?"})
+
+# --- NEW APIS FOR ELITE TERMINAL ---
+
+@app.post("/api/bot/start")
+async def start_bot():
+    if not engine.running:
+        logger.info("[USER] Manual START clicked. Booting engine...")
+        asyncio.create_task(engine.start())
+        return JSONResponse({"status": "started"})
+    else:
+        logger.info("[USER] START clicked but bot is already running. Forcing immediate scan...")
+        asyncio.create_task(engine.force_scan())
+        return JSONResponse({"status": "already_running_scan_triggered"})
+
+@app.post("/api/bot/stop")
+async def stop_bot():
+    if engine.running:
+        logger.info("[USER] Manual STOP clicked. Shutting down engine...")
+        await engine.stop()
+        return JSONResponse({"status": "stopped"})
+    logger.info("[USER] STOP clicked but engine is already stopped.")
+    return JSONResponse({"status": "already_stopped"})
+
+
+@app.post("/api/bot/reset")
+async def reset_bot():
+    logger.info("[USER] Manual RESET clicked. Clearing all states and closing positions...")
+    global _stats_cache, _stats_last_fetch
+    await engine.reset_state()
+    globals()["_stats_cache"] = None
+    globals()["_stats_last_fetch"] = 0
+    
+    # Sincronizar (limpiar) el terminal visual vaciando el log
+    if os.path.exists(BOT_LOG_FILE):
+        try:
+            with open(BOT_LOG_FILE, "w", encoding="utf-8") as f:
+                ts = datetime.now().strftime("%H:%M:%S")
+                f.write(f"[{ts}] [INFO] QUANTUM BYBIT - [SYSTEM] Terminal sincronizado y limpiado. Escaneando...\n")
+        except Exception as e:
+            logger.error(f"No se pudo limpiar el log: {e}")
+
+    return JSONResponse({"status": "reset_completed"})
+
+@app.get("/api/debug-log")
+async def get_debug_log():
+    try:
+        import os
+        if os.path.exists("storage/bot.log"):
+            with open("storage/bot.log", "r") as f:
+                lines = f.readlines()
+                return {"logs": [line.strip() for line in lines[-100:]]}
+        return {"logs": ["storage/bot.log does not exist"]}
+    except Exception as e:
+        return {"logs": [f"Error: {e}"]}
+
+@app.get("/api/supertrend-log")
+async def get_supertrend_log():
+    try:
+        import os
+        if os.path.exists("storage/supertrend_raw.log"):
+            with open("storage/supertrend_raw.log", "r") as f:
+                lines = f.readlines()
+                return {"logs": [line.strip() for line in lines[-100:]]}
+        return {"logs": ["storage/supertrend_raw.log does not exist"]}
+    except Exception as e:
+        return {"logs": [f"Error: {e}"]}
+
+@app.get("/api/dashboard")
+async def api_dashboard():
+    """Returns live balance, open positions, and strategy config."""
+    try:
+        balance = await bybit_client.get_balance()
+        positions = await bybit_client.get_positions()
+    except Exception as e:
+        logger.error(f"Error fetching dashboard data from Bybit: {e}")
+        balance = 0.0
+        positions = []
+
+    # Filter out closed positions (size == 0)
+    active_positions = [p for p in positions if abs(float(p.get("positionAmt", 0))) > 0]
+
+    # Enrich each position with internal trade state (BE/Trailing status)
+    enriched_positions = []
+    for pos in active_positions:
+        sym = pos.get("symbol", "")
+        trade_state = engine.trade_state.get(sym, {})
+        enriched = dict(pos)
+        enriched["breakeven_hit"]    = trade_state.get("breakeven_hit", False)
+        enriched["profit_lock_active"] = trade_state.get("profit_lock_active", False)
+        enriched["trailing_active"]  = trade_state.get("trailing_active", False)
+        enriched["tp1_hit"]          = trade_state.get("tp1_hit", False)
+        enriched["tp2_hit"]          = trade_state.get("tp2_hit", False)
+        enriched["sl_price"]         = trade_state.get("sl_price", None)
+        enriched["tp_price"]         = trade_state.get("tp_price", None)
+        enriched["score"]            = trade_state.get("score", None)
+        # Si la estrategia es N/A significa que la abrió el otro bot paralelo
+        enriched["strategy"]         = trade_state.get("strategy") if trade_state.get("strategy") else "MANUAL / EXTERNAL"
+        enriched_positions.append(enriched)
+
+    return JSONResponse({
+        "status": "online",
+        "running": engine.running,
+        "balance": balance,
+        "positions": enriched_positions,
+        "config": {
+            "leverage": Config.LEVERAGE,
+            "max_trades": Config.MAX_OPEN_TRADES,
+            "risk_per_trade": Config.RISK_PER_TRADE
+        }
+    })
+
+@app.get("/api/stats")
+async def api_stats():
+    """Calculates global performance from trades.json."""
+    stats = {
+        "pnl_today": 0.0, "win_today": 0, "loss_today": 0,
+        "pnl_week": 0.0, "win_week": 0, "loss_week": 0,
+        "pnl_month": 0.0, "win_month": 0, "loss_month": 0,
+        "pnl_total": 0.0, "total_trades": 0,
+        "win_rate": 0.0, "profit_factor": 0.0,
+        "mean_win": 0.0, "mean_loss": 0.0,
+        "recent_trades": []
+    }
+
+    if os.path.exists(TRADES_FILE):
+        try:
+            with open(TRADES_FILE, "r") as f:
+                trades = json.load(f)
+            
+            # If trades is a dict, get values
+            if isinstance(trades, dict):
+                trade_list = list(trades.values())
+            else:
+                trade_list = trades
+                
+            if trade_list:
+                wins = 0
+                losses = 0
+                gross_profit = 0.0
+                gross_loss = 0.0
+
+                for t in trade_list:
+                    pnl = float(t.get("pnl", 0.0) or 0.0)
+                    stats["total_trades"] += 1
+
+                    if pnl > 0:
+                        wins += 1
+                        gross_profit += pnl
+                    elif pnl < 0:
+                        losses += 1
+                        gross_loss += abs(pnl)
+
+                stats["win_rate"] = (wins / stats["total_trades"] * 100) if stats["total_trades"] > 0 else 0.0
+                stats["profit_factor"] = (gross_profit / gross_loss) if gross_loss > 0 else (99.9 if gross_profit > 0 else 0.0)
+                stats["mean_win"] = (gross_profit / wins) if wins > 0 else 0.0
+                stats["mean_loss"] = (gross_loss / losses) if losses > 0 else 0.0
+
+                # Sort by latest if possible, and return top 5
+                stats["recent_trades"] = trade_list[-5:]
+        except Exception as e:
+            logger.error(f"Error calculating stats from trades.json: {e}")
+
+    # We cache this heavy operation for 60 seconds
+    global _stats_cache, _stats_last_fetch
+    if "time" in globals() and time.time() - globals().get("_stats_last_fetch", 0) < 60:
+        if globals().get("_stats_cache"):
+            return JSONResponse(globals()["_stats_cache"])
+
+    try:
+        real_trades = []
+        
+        # Fetch Realized PNL and Fees using Bybit client
+        income_data = []
+        try:
+            income_data = await bybit_client.get_income(limit=1000)
+        except Exception as api_e:
+            logger.error(f"Error fetching extended income: {api_e}")
+        
+        # Load PNL_START_TIME from storage/pnl_start_time.txt if exists
+        pnl_start_time = getattr(Config, "PNL_START_TIME", 0)
+        pnl_start_time_file = os.path.join(Config.STORAGE_DIR, "pnl_start_time.txt")
+        if os.path.exists(pnl_start_time_file):
+            try:
+                with open(pnl_start_time_file, "r") as f:
+                    pnl_start_time = int(f.read().strip())
+            except Exception as e:
+                logger.error(f"Error loading pnl_start_time.txt: {e}")
+
+        now_ms = int(time.time() * 1000)
+        
+        # Calculate last 11:00 PM UTC-5 (which is 04:00 UTC)
+        # Epoch 0 is 00:00 UTC. We get the start of today in UTC, add 4 hours.
+        current_day_utc_start = (now_ms // 86400000) * 86400000
+        reset_ms = current_day_utc_start + (4 * 3600 * 1000)
+        if now_ms < reset_ms:
+            reset_ms -= 86400000  # Reset was yesterday
+            
+        p_today = 0.0
+        w_today = 0
+        l_today = 0
+        
+        # Initialize vars for removed stats (to not break the return dict)
+        p_week, p_month, p_total = 0.0, 0.0, 0.0
+        w_week, w_month, l_week, l_month = 0, 0, 0, 0
+
+        if income_data:
+            for item in income_data:
+                amt = float(item.get("closedPnl", 0.0))
+                ts = int(item.get("createdTime", item.get("updatedTime", 0)))
+                
+                p_total += amt
+                if ts >= reset_ms: 
+                    p_today += amt
+                    if amt > 0: w_today += 1
+                    elif amt < 0: l_today += 1
+
+            # Build history from REALIZED_PNL only
+        for item in income_data:
+            amt = float(item.get("closedPnl", 0.0))
+            sym = item.get("symbol", "")
+            ts = int(item.get("createdTime", item.get("updatedTime", 0)))
+            side_str = item.get("side", "")
+            side = "LONG" if side_str == "Sell" else ("SHORT" if side_str == "Buy" else "TRADE")
+            # Try to enrich with local trade data
+            local_strat = "UNKNOWN"
+            local_reason = ""
+            local_be = False
+            local_trail = False
+            if 'trade_list' in locals() and trade_list:
+                for lt in trade_list:
+                    if lt.get("symbol") == sym:
+                        lt_time = lt.get("close_timestamp", 0) * 1000
+                        # Allow up to 3 minutes delta
+                        if abs(ts - lt_time) < 180000:
+                            local_strat = lt.get("strategy", "UNKNOWN")
+                            local_reason = lt.get("close_reason", "")
+                            local_be = lt.get("breakeven_hit", False)
+                            local_trail = lt.get("trailing_active", False)
+                            break
+            
+            real_trades.append({
+                "symbol": sym,
+                "side": side,
+                "pnl": amt,
+                "reason": local_reason,
+                "strategy": local_strat,
+                "breakeven_hit": local_be,
+                "trailing_active": local_trail,
+                "time": ts
+            })
+        
+        # Calculate real stats from real_trades
+        wins = sum(1 for t in real_trades if t["pnl"] > 0)
+        losses = sum(1 for t in real_trades if t["pnl"] < 0)
+        gross_profit = sum(t["pnl"] for t in real_trades if t["pnl"] > 0)
+        gross_loss = sum(abs(t["pnl"]) for t in real_trades if t["pnl"] < 0)
+        total_trades = wins + losses
+
+        stats["win_rate"] = (wins / total_trades * 100) if total_trades > 0 else 0.0
+        stats["profit_factor"] = (gross_profit / gross_loss) if gross_loss > 0 else (99.9 if gross_profit > 0 else 0.0)
+        stats["mean_win"] = (gross_profit / wins) if wins > 0 else 0.0
+        stats["mean_loss"] = (gross_loss / losses) if losses > 0 else 0.0
+        stats["total_trades"] = total_trades
+
+        # Sort trades by time desc and take top 10
+        real_trades.sort(key=lambda x: x["time"], reverse=True)
+        stats["recent_trades"] = real_trades[:10]
+
+        if income_data:
+            stats["pnl_today"] = round(p_today, 2)
+            stats["pnl_week"] = round(p_week, 2)
+            stats["pnl_month"] = round(p_month, 2)
+            stats["pnl_total"] = round(p_total, 2)
+            
+            stats["win_today"] = w_today
+            stats["loss_today"] = l_today
+            stats["win_week"] = w_week
+            stats["loss_week"] = l_week
+            stats["win_month"] = w_month
+            stats["loss_month"] = l_month
+            
+        globals()["_stats_cache"] = stats
+        globals()["_stats_last_fetch"] = time.time()
+        
+    except Exception as e:
+        logger.error(f"Error computing live PNL from exchange: {e}")
+
+    return JSONResponse(stats)
+
+@app.get("/api/logs")
+async def api_logs():
+    """Returns the last 100 lines of the system log."""
+    logs = []
+    if os.path.exists(BOT_LOG_FILE):
+        try:
+            with open(BOT_LOG_FILE, "r", encoding="utf-8", errors="replace") as f:
+                lines = f.readlines()
+                logs = [l.strip() for l in lines[-100:] if l.strip()]
+        except Exception as e:
+            logs = [f"[ERROR] Could not read logs: {e}"]
+    return JSONResponse({"logs": logs})
+
+# --- OLD ENDPOINTS FOR COMPATIBILITY ---
+@app.get("/status")
+async def get_status():
+    return JSONResponse({"status": "running"})
+
+@app.get("/health")
+async def get_health():
+    return JSONResponse({"status": "healthy", "timestamp": int(time.time())})
+
+@app.get("/ping")
+async def ping():
+    return {"pong": True}
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 7860))
+    uvicorn.run("app.main:app", host="0.0.0.0", port=port, reload=False)
