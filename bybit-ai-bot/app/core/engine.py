@@ -170,9 +170,15 @@ class Engine:
                 entry_price = trade["entry_price"]
                 tp2_price = trade["tp2_price"]  # El 100% de la operación es el último TP
                 
-                # Breakeven: se activa cuando el precio avanza 2.0 ATR
+                # Breakeven: se activa según la estrategia
                 if not trade.get("profit_lock_active"):
-                    be_threshold = trade["atr"] * 2.0
+                    if trade.get("strategy") == "AntigravityV13":
+                        # Activa al 33.3% de ROE (3.33% de mov. de precio a 10x)
+                        be_threshold = entry_price * (0.333 / Config.LEVERAGE)
+                    else:
+                        # SuperTrend activa BE a los 2.0 ATR
+                        be_threshold = trade["atr"] * 2.0
+                        
                     if side == "LONG" and mark_price >= entry_price + be_threshold:
                         await self._activate_profit_lock(symbol, trade)
                     elif side == "SHORT" and mark_price <= entry_price - be_threshold:
@@ -358,8 +364,13 @@ class Engine:
             tp1_price = entry_price + (1.5 * atr) if side == "LONG" else entry_price - (1.5 * atr)
             tp2_price = entry_price + (3.0 * atr) if side == "LONG" else entry_price - (3.0 * atr)
             
-        # Breakeven SL: exactamente en precio de entrada (0.00 ATR) para proteger el trade.
-        profit_lock_price = entry_price
+        # Breakeven SL
+        if strategy_name == "AntigravityV13":
+            # Asegura el 15% de ROE moviendo el SL a +15% de ganancia de la operación
+            profit_lock_price = entry_price + (entry_price * (0.15 / Config.LEVERAGE)) if side == "LONG" else entry_price - (entry_price * (0.15 / Config.LEVERAGE))
+        else:
+            # SuperTrend asegura exactamente el precio de entrada (0.00 ATR)
+            profit_lock_price = entry_price
         
         # Tamaño de posición fijo: $15 USDT margen * Apalancamiento
         total_volume_usdt = Config.MARGIN_USDT * Config.LEVERAGE

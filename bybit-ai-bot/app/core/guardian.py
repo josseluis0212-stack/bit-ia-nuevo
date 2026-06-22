@@ -82,8 +82,13 @@ class ExchangeSynchronizer:
                                 entry_price = trade["entry_price"]
                                 atr = trade["atr"]
                                 
-                                # BE se activa al llegar al 33.3% de la operación (1.665 ATR)
-                                be_threshold = atr * 1.665
+                                # BE se activa según la estrategia
+                                if trade.get("strategy") == "AntigravityV13":
+                                    from app.config import Config
+                                    be_threshold = entry_price * (0.333 / Config.LEVERAGE)
+                                else:
+                                    be_threshold = atr * 2.0
+                                    
                                 be_triggered = (
                                     (side == "LONG" and mark_price >= entry_price + be_threshold) or
                                     (side == "SHORT" and mark_price <= entry_price - be_threshold)
